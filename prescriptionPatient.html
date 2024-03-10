@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PrescriptionPatient</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyLnvMzCkLw2Sb6b0FZd1d4q5U0wABENFk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <style>
+      /*center the buttons*/
+      /* Centering the buttons horizontally */
+      .buttons-container {
+        display: flex;
+        justify-content: center;
+      }
+
+      /* Optional: Centering the buttons vertically */
+      .buttons-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* Styling for the buttons (adjust as needed) */
+      .button {
+        padding: 10px 20px;
+        margin: 5px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div id="prescription">
+      <div id="allPrescriptions">
+        <h2>See All Prescription of Your All Appointments</h2>
+        <button onclick="showAllPrescriptions()">Show All Prescriptions</button>
+        <div id="givenMedicine"></div>
+        <div id="givenAdvice"></div>
+        <div id="givenTests"></div>
+        <div id="givenTestResults"></div>
+      </div>
+      <div id="prescriptionOnaGivenAppointment">
+        <h2>See Prescription of a Given Appointment</h2>
+        <label for="appointmentID">Appointment ID:</label>
+        <input
+          type="text"
+          id="appointmentIDForPrescription"
+          placeholder="Enter Appointment ID"
+        />
+        <button onclick="showPrescriptionOnaGivenAppointment()">
+          Show Prescription
+        </button>
+        <div id="givenMedicineOnaGivenAppointment"></div>
+        <div id="givenAdviceOnaGivenAppointment"></div>
+        <div id="givenTestsOnaGivenAppointment"></div>
+        <div id="givenTestResultsOnaGivenAppointment"></div>
+      </div>
+    </div> -->
+
+    <div>
+      <h2>See Prescription Of your Most recent Appointment</h2>
+      <h3>See Prescribed Medicines </h2>
+      <button onclick="showPrescribedMedicinesOfRecent()">Show Prescribed Medicines Of Recent Appointment</button>
+      <div id="prescribedMedicinesOfRecent"></div>
+      <h3>See Prescribed Advices </h2>
+      <button onclick="showPrescribedAdvicesOfRecent()">Show Prescribed Advices Of Recent Appointment</button>
+      <div id="prescribedAdvicesOfRecent"></div>
+      <h3>See Prescribed Tests </h2>
+      <button onclick="showPrescribedTestsOfRecent()">Show Prescribed Tests Of Recent Appointment</button>
+      <div id="prescribedTestsOfRecent"></div>
+      <h3>See Completed Test Results </h2>
+      <button onclick="showCompletedTestResultsOfRecent()">Show Completed Test Results Of Recent Appointment</button>
+      <div id="completedTestResultsOfRecent"></div>
+    </div>
+
+    <div>
+      <h2>See All Prescription Of Your Appointments in this hospital</h2>
+      <h3>See Prescribed Medicines</h3>
+      <button onclick="showAllPrescribedMedicines()">Show All Prescribed Medicines</button>
+      <div id="allPrescribedMedicines"></div>
+      <h3>See Prescribed Advices</h3>
+      <button onclick="showAllPrescribedAdvices()">Show All Prescribed Advices</button>
+      <div id="allPrescribedAdvices"></div>
+      <h3>See Prescribed Tests</h3>
+      <button onclick="showAllPrescribedTests()">Show All Prescribed Tests</button>
+      <div id="allPrescribedTests"></div>
+      <h3>See Completed Test Results</h3>
+      <button onclick="showAllCompletedTestResults()">Show All Completed Test Results</button>
+      <div id="allCompletedTestResults"></div>
+    </div>
+    <div >
+      <h2>See Prescription Of a Given Appointment Date</h2>
+      <label for="appointmentDate">Appointment Date:</label>
+      <input
+        type="date"
+        id="appointmentDateForPrescription"
+        placeholder="Enter Appointment Date"
+      />
+      <h3>See Prescribed Medicine On Appointment on this Date</h3>
+      <button onclick="showPrescribedMedicineOnGivenAppointmentDate()">Show Prescribed Medicine On Given Appointment Date</button>
+      <div id="prescribedMedicineOnGivenAppointmentDate"></div>
+      <h3>See Prescribed Advices On Appointment on this Date</h3>
+      <button onclick="showPrescribedAdvicesOnGivenAppointmentDate()">Show Prescribed Advices On Given Appointment Date</button>
+      <div id="prescribedAdvicesOnGivenAppointmentDate"></div>
+      <h3>See Prescribed Tests On Appointment on this Date</h3>
+      <button onclick="showPrescribedTestsOnGivenAppointmentDate()">Show Prescribed Tests On Given Appointment Date</button>
+      <div id="prescribedTestsOnGivenAppointmentDate"></div>
+      <h3>See Completed Test Results On Appointment on this Date</h3>
+      <button onclick="showCompletedTestResultsOnGivenAppointmentDate()">Show Completed Test Results On Given Appointment Date</button>
+      <div id="completedTestResultsOnGivenAppointmentDate"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"
+    integrity="sha384-N8IQIvxrja8AuN4bNfqVAPBwlMtkzQ8i/dLMyW7xqEj9s5qCkBoaVv6VODd4cPeJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyLnvMzCkLw2Sb6b0FZd1d4q5U0wABENFk" crossorigin="anonymous"></script>
+    <script src="prescriptionPatient.js"></script>
+  </body>
+</html>

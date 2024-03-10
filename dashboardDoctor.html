@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyLnvMzCkLw2Sb6b0FZd1d4q5U0wABENFk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <!-- log in as doctor -->
+    <!-- take input doctor id -->
+    <!-- log in button -->
+    <!-- display doctor information -->
+    <div id="doctorInfo"></div>
+    <!-- call login function when html gets loaded -->
+    <div id="seeMyLastMonthIncome">
+      <h2>My Last Month Income</h2>
+      <button onclick="showMyLastMonthIncome()">Show Income</button>
+      <div id="myLastMonthIncome"></div>
+    </div>
+    <div id="myHigghestNumberOfAppointments">
+      <h2>See With Which Patient I have done most Appointments</h2>
+      <button onclick="showMyHighestNumberOfAppointments()">
+        Show Highest Number of Appointments and Patient Name
+      </button>
+      <div id="myHighestNumberOfAppointments"></div>
+    </div>
+    <!-- See appointments -->
+    <h2>See Pending Appointments</h2>
+    <button onclick="viewAppointments()">See Appointments</button>
+    <div id="appointmentsTable"></div>
+    <div id="patientHistoryUnderMe">
+      <div id="patientHistoryUnderMeMedicine"></div>
+      <div id="patientHistoryUnderMeAdvice"></div>
+      <div id="patientHistoryUnderMeLabTest"></div>
+      <div id="patientHistoryUnderMeLabTestResult"></div>
+    </div>
+    <div id="hasTakenMorethanOneAppointmentWithSingleDisease">
+      <h2>Patients who has taken more than one appointment with single disease</h2>
+      <button onclick="showPatientsWhoHasTakenMorethanOneAppointmentWithSingleDisease()">
+        Show Patients
+      </button>
+      <div id="patientsWhoHasTakenMorethanOneAppointmentWithSingleDisease"></div>
+    </div>
+    <div id="seeMyLast7DaysAppointments">
+      <h2>My Last 7 Days Appointments</h2>
+      <button onclick="showMyLast7DaysAppointments()">Show Appointments</button>
+      <div id="myLast7DaysAppointments"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"
+    integrity="sha384-N8IQIvxrja8AuN4bNfqVAPBwlMtkzQ8i/dLMyW7xqEj9s5qCkBoaVv6VODd4cPeJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyLnvMzCkLw2Sb6b0FZd1d4q5U0wABENFk" crossorigin="anonymous"></script>
+    <script src="dashboardDoctor.js"></script>
+  </body>
+</html>

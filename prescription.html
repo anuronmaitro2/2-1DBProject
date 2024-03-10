@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prescription</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyLnvMzCkLw2Sb6b0FZd1d4q5U0wABENFk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      th,
+      td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Prescription</h1>
+    <!-- Display patient details in a table -->
+    <div id="patient">
+    <table>
+      <tr>
+        <th>Patient Name</th>
+        <th>Disease</th>
+        <th>Gender</th>
+        <th>Appointment ID</th>
+        <!-- <th>Prescription ID</th> -->
+        <!-- Add more headers as needed -->
+      </tr>
+      <tr>
+        <td id="patientName"></td>
+        <td id="disease"></td>
+        <td id="gender"></td>
+        <td id="AppointmentID"></td>
+        <!-- <td id="prescriptionID"></td> -->
+        <!-- Add more data cells as needed -->
+      </tr>
+    </table>
+
+  </div>
+  <div>
+    <h2>Doctor Fee</h2>
+    <!-- create a input -->
+    <input type="text" id="doctorFee" placeholder="Enter Doctor Fee" />
+    <!-- create a button -->
+    <button onclick="addDoctorFee()">Submit</button>
+    
+  </div>
+
+    <!-- <div id="addNewMedicine">
+     create a button named add new Medicine -->
+      <!-- <button onclick="addNewMedicine()">Add New Medicine</button>
+    </div> -->
+    <!-- Add more content as needed -->
+
+
+    <!-- add a button to give medicine -->
+    <div id="giveMedicine">
+      <!-- input for medicine -->
+      <div id="medicines">
+        <h2>All Medicines</h2>
+      </div>
+      <label for="medicine">Medicine:</label>
+      <input type="text" id="medicine" placeholder="Enter Medicine" />
+      <button onclick="fetchAndDisplayMedicines()">Give Medicine</button>
+      <div id="medicinesTable"></div>
+    </div>
+    <!-- add a button to give advices -->
+    <div id="giveAdvice">
+      <div id="advices">
+        <h2>Advices</h2>
+      </div>
+      <!-- input for advice -->
+      <label for="advice">Advice:</label>
+      <input type="text" id="advice" placeholder="Enter Advice Type" />
+      <button onclick="fetchAndDisplayAdvices()">Give Advice</button>
+      <div id="advicesTable"></div>
+    </div>
+    <!-- Add a button to giv lab tests -->
+    <div id="giveLabTests">
+      <!-- input for lab tests -->
+      <div id="labTests">
+        <h2>Lab Tests</h2>
+      </div>
+      <label for="labTest">Lab Test:</label>
+      <input type="text" id="labTest" placeholder="Enter Lab Test Name" />
+      <button onclick="fetchAndDisplayLabTests()">Give Lab Tests</button>
+      <div id="labTestsTable"></div>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"
+    integrity="sha384-N8IQIvxrja8AuN4bNfqVAPBwlMtkzQ8i/dLMyW7xqEj9s5qCkBoaVv6VODd4cPeJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyLnvMzCkLw2Sb6b0FZd1d4q5U0wABENFk" crossorigin="anonymous"></script>
+    <script src="prescription.js"></script>
+  </body>
+</html>

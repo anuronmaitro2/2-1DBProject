@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyLnvMzCkLw2Sb6b0FZd1d4q5U0wABENFk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <div>
+      <h1>Welcome Admin</h1>
+      <div>
+        <h2>Add a New Medicine</h2>
+        <!-- open new html page Naming AddMedicine -->
+        <button onclick="window.location.href='AddMedicine.html'">
+          Add New Medicine
+        </button>
+      </div>
+      <div id="addANewAdvice">
+        <h2>Add a New Advice</h2>
+        <button onclick="window.location.href='AddAdvice.html'">
+          Add New Advice
+        </button>
+      </div>
+      <div>
+        <h2>Add a New Lab Test</h2>
+        <!-- open new html page Naming AddLabTest -->
+        <button onclick="window.location.href='AddLabTest.html'">
+          Add New Lab Test
+        </button>
+      <div id="view Bill Logs">
+        <h2>View paid Bill Logs</h2>
+        <button type="button" onclick="viewPaidBillLogs()">
+          View Bill Logs
+        </button>
+        <div id="paidBillLogs"></div>
+        <h2>View Unpaid Bill logs</h2>
+        <button type="button" onclick="viewUnpaidBillLogs()">
+          View Unpaid Bill Logs
+        </button>
+        <div id="unpaidBillLogs"></div>
+      </div>
+      <div id="showPaidUnpaidAmount">
+        <h2>Show Paid and Unpaid Amount</h2>
+        <button type="button" onclick="showPaidUnpaidAmount()">
+          Show Paid and Unpaid Amount
+        </button>
+        <div id="paidUnpaidAmount"></div>
+      </div>
+      <div id="Medicine Usage">
+        <h2>Medicine Usage</h2>
+        <button type="button" onclick="showMedicineUsageLastMonth()">
+          Show Medicine Usage LAST MONTH IN PIE CHART
+        </button>
+        <div id="medicineUsageTable"></div>
+        <!-- for a selected medicine -->
+      </div>
+      <div></div>
+      <div></div>
+
+      <div id="for a specific med">
+        <h2>Enter Medicine Name</h2>
+        <label for="medicineName1">Medicine Name</label>
+        <input type="text" name="medicineName1" id="medicineName1" />
+        
+        <button type="button" onclick="showMedicineUsageForThisMed()">
+          Show Medicine Usage LAST MONTH FOR THIS MEDICINE
+        </button>
+        <div id="medicineUsageTable1"></div>
+      </div>
+      <div id="doctorPatientCount">
+        <h2>Show how many patients Doctors have Prescribed</h2>
+        <button type="button" onclick="showDoctorsPatientCount()">
+          Show Doctor Patient Count In Bar Chart
+        </button>
+        <div id="doctorPatientCountTable"></div>
+      </div>
+      <div id="showDoctorIncome">
+        <h2>Show All the Doctors Income</h2>
+        <button type="button" onclick="showDoctorIncome()">
+          Show Doctor Income In Bar Chart
+        </button>
+        <div id="doctorIncomeTable"></div>
+      </div>
+      <div id="doctorPatientCountBetweenDates">
+        <h2>Show how many patients Doctors have Prescribed between dates</h2>
+        <label for="startDate">Start Date</label>
+        <input type="date" name="startDate" id="startDate" />
+        <label for="endDate">End Date</label>
+        <input type="date" name="endDate" id="endDate" />
+        <!-- create button  -->
+        <button type="button" onclick="showDoctorsPatientCountBetweenDates()">
+          Show Doctor Patient Count Between Dates
+        </button>
+        <div id="doctorPatientCountBetweenDatesTable"></div>
+      </div>
+      <div id="doctorRankBasedOnPatientCount">
+        <h2>Show Doctor Rank Based On How Many Patients He Has Prescribed</h2>
+        <button type="button" onclick="showDoctorRankBasedOnPatientCount()">
+          Show Doctor Rank
+        </button>
+        <div id="doctorRankTable"></div>
+      </div>
+      <div id="seePatientLabTestCost">
+        <h2>See Patient Lab Test Cost</h2>
+        <button type="button" onclick="showPatientLabTestCost()">
+          Show All Patient Lab Test total Cost
+        </button>
+        <div id="patientLabTestCostTable"></div>
+      </div>
+      <div id="unpaidLabtestCost">
+        <h2>Unpaid Lab Test Cost of patients</h2>
+        <button type="button" onclick="showUnpaidLabTestCost()">
+          Show Unpaid Lab Test Cost
+        </button>
+        <div id="unpaidLabTestCostTable"></div>
+      </div>
+      <div id="paidLabtestCost">
+        <h2>Paid Lab Test Cost of patients</h2>
+        <button type="button" onclick="showPaidLabTestCost()">
+          Show Paid Lab Test Cost
+        </button>
+        <div id="paidLabTestCostTable"></div>
+      </div>
+      <div id="seePatientWithMultipleUnpaidBills">
+        <h2>See Patient With Multiple Unpaid Bills</h2>
+        <button type="button" onclick="showPatientWithMultipleUnpaidBills()">
+          Show Patient With Multiple Unpaid Bills
+        </button>
+        <div id="patientWithMultipleUnpaidBillsTable"></div>
+      </div>
+      <div id="seeDayWiseAppointmentCount">
+        <h2>See Day Wise Appointment And Prescription Count</h2>
+        <button type="button" onclick="showDayWiseAppointmentCount()">
+          Show Day Wise Appointment Count In graph
+        </button>
+        <div id="dayWiseAppointmentCountTable"></div>
+      </div>
+      <div id="diseaseWithNoOfPatients">
+        <h2>Disease With No Of Patients</h2>
+        <button type="button" onclick="showDiseaseWithNoOfPatients()">
+          Show Disease With No Of Patients
+        </button>
+        <div id="diseaseWithNoOfPatientsTable"></div>
+      </div>
+      <div id="doctorWhoHasnotPrescribed">
+        <h2>Doctor Who Has not Prescribed Any Patient Yet</h2>
+        <button type="button" onclick="showDoctorWhoHasnotPrescribed()">
+          Show Doctor Who Has not Prescribed
+        </button>
+        <div id="doctorWhoHasnotPrescribedTable"></div>
+      </div>
+      <div id="howManyTimesMedicinePrescribed">
+        <h2>How Many Times A Medicine Has been Prescribed</h2>
+        <label for="medicineName1">Medicine Name</label>
+        <input type="text" name="medicineName1" id="medicineName1" />
+        <button type="button" onclick="showHowManyTimesMedicinePrescribed()">
+          Show How Many Times Medicine Prescribed
+        </button>
+        <div id="medicinePrescribedTable"></div>
+      </div>
+      <div id="howManyTimesLabTestPrescribed">
+        <h2>How Many Times A Lab Test Has been Prescribed</h2>
+        <label for="labTestName1">Lab Test Name</label>
+        <input type="text" name="labTestName1" id="labTestName1" />
+        <button type="button" onclick="showHowManyTimesLabTestPrescribed()">
+          Show How Many Times Lab Test Prescribed
+        </button>
+        <div id="labTestPrescribedTable"></div>
+      </div>
+      <div id="howManyTimesALabTestHasBennConducted">
+        <h2>How Many Times A Lab Test Has been Conducted</h2>
+        <label for="labTestName2">Lab Test Name</label>
+        <input type="text" name="labTestName2" id="labTestName2" />
+        <button
+          type="button"
+          onclick="showHowManyTimesALabTestHasBennConducted()"
+        >
+          Show How Many Times Lab Test Conducted
+        </button>
+        <div id="labTestConductedTable"></div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"
+    integrity="sha384-N8IQIvxrja8AuN4bNfqVAPBwlMtkzQ8i/dLMyW7xqEj9s5qCkBoaVv6VODd4cPeJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyLnvMzCkLw2Sb6b0FZd1d4q5U0wABENFk" crossorigin="anonymous"></script>
+    <script src="admin.js"></script>
+  </body>
+</html>

@@ -1,0 +1,611 @@
+body {
+  font-family: 'Inter', sans-serif; /* Updated font */
+  background-color: #f8f8f8; /* Adjusted background color */
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+h1 {
+  color: #2c3e50; /* Adjusted heading color */
+  text-align: center;
+  font-family: 'Playfair Display', serif; /* Updated font for heading */
+}
+
+table {
+  width: 100%; /* Adjusted table width for responsiveness */
+  margin-top: 20px;
+  border-collapse: collapse;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #ecf0f1; /* Adjusted table header background color */
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9; /* Added zebra striping */
+}
+
+tr:hover {
+  background-color: #f2f2f2; /* Added hover effect */
+}
+
+button {
+  background-color: #3498db; /* Adjusted button color */
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #2980b9; /* Adjusted button hover color */
+}
+
+/* Add more styles as needed for other elements */
+/* Additional Styles */
+
+/* Header Styles */
+header {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Input Styles */
+input {
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px; /* Added border-radius */
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Added box-shadow */
+}
+
+/* Form Styles */
+form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Alert Styles */
+.alert {
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  color: #333;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  color: #155724;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
+}
+
+/* Link Styles */
+a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+/* Responsive Navigation Styles */
+nav {
+  background-color: #333;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ddd;
+}
+
+/* Card Styles */
+.card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  padding: 20px;
+}
+
+/* Button Styles */
+.btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #2980b9;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  max-width: 400px;
+}
+
+/* Responsive Layout Styles */
+@media only screen and (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    margin: 10px 0;
+  }
+
+  .card {
+    margin: 10px;
+  }
+
+  .btn {
+    margin: 5px;
+  }
+
+  /* Add more responsive styles as needed */
+}
+html {
+    min-height: 100%;
+    position: relative;
+  }
+  
+  .header-container-fluid {
+      padding-top: 70px;
+      padding-bottom: 70px;
+  }
+  .header-navbar {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border: 0;
+      border-radius: 0;
+      margin-bottom: 0;
+      font-size: 12px;
+      letter-spacing: 5px;
+  }
+  .header-navbar-nav  li a:hover {
+      color: #1abc9c !important;
+  }
+  
+  .footer-padding {
+      padding-bottom: 60px;
+  }
+  
+  .footer {
+      position: absolute;
+      text-align: center;
+      bottom: 0;
+      width: 100%;
+      height: 60px;
+      background-color: #1abc9c;
+  }
+  
+  .footer p {
+      margin-top: 25px;
+      font-size: 12px;
+    color: #fff;
+  }
+body {
+    font-family: "Lato", sans-serif;
+  }
+  
+  /* Fixed sidenav, full height */
+  .sidenav {
+    height: 82%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 9.75%;
+    left: 0;
+    background-color: rgb(197, 32, 32);
+    overflow-x: hidden;
+    padding-top: 20px;
+    /* margin-right: 45%; */
+  }
+  
+  /* Style the sidenav links and the dropdown button */
+  .sidenav a, .dropdown-btn {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #ddd9d9;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  /* On mouse-over */
+  .sidenav a:hover, .dropdown-btn:hover {
+    color: #f0f0f0;
+  }
+  
+  /* Main content */
+  .main {
+    margin-left: 200px; /* Same as the width of the sidenav */
+    font-size: 20px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+  }
+  
+  /* Add an active class to the active dropdown button */
+  .active {
+    background-color: rgb(77, 67, 67);
+    color: white;
+  }
+  
+  /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+  .dropdown-container {
+    display: none;
+    background-color: #423c05;
+    padding-left: 8px;
+  }
+  
+  /* Optional: Style the caret down icon */
+  .fa-caret-down {
+    float: right;
+    padding-right: 8px;
+  }
+  
+  /* Some media queries for responsiveness */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+body {
+    margin: 0;
+    font-family: "Lato", sans-serif;
+}
+
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+.sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+}
+
+.sidebar a.active {
+    background-color: #1b201d;
+    color: white;
+}
+
+.sidebar a:hover:not(.active) {
+    background-color: rgb(185, 189, 187);
+    color: white;
+}
+
+div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+}
+
+@media screen and (max-width: 700px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+    .sidebar a {
+        text-align: center;
+        float: none;
+    }
+}
+  
+/* Add the following CSS for animations */
+
+/* Fade-in animation for the main content */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Slide-in animation for the sidebar */
+@keyframes slideIn {
+  from {
+    transform: translateX(-200px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.sidebar {
+  animation: slideIn 0.5s ease-out;
+}
+
+/* Add transition for smoother hover effects */
+.sidebar a {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Add hover effect for active link in sidebar */
+.sidebar a.active:hover {
+  background-color: #1b201d;
+}
+
+/* Add hover effect for links in sidebar */
+.sidebar a:not(.active):hover {
+  background-color: rgb(185, 189, 187);
+  color: white;
+}
+/* Reset some default styles for better consistency */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+li,
+table,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f8f8f8;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+h1 {
+  color: #2c3e50;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: yellowgreen;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f2f2f2;
+}
+tr:hover {
+  background-color:rgb(63, 104, 121); /* Mint-type color on hover */
+}
+/* Reset some default styles for better consistency */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+/* Add spacing between any two divs */
+div {
+  margin-bottom: 20px; /* Adjust the value as needed */
+}
+
+h1 {
+  color: #3498db; /* Header 1 color */
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #27ae60; /* Header 2 color */
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+h3 {
+  color: #e74c3c; /* Header 3 color */
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+h4 {
+  color: #9b59b6; /* Header 4 color */
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+h5 {
+  color: #f39c12; /* Header 5 color */
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+h6 {
+  color: #2ecc71; /* Header 6 color */
+  text-align: center;
+  margin-bottom: 4px;
+}
+/* Center align buttons within div */
+button {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Adjust button styling */
+.btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px auto; /* Center margin */
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: yellowgreen;
+}
+th, td {
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  color: #2c3e50;
+}
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: separate;
+  border-spacing: 0 10px; /* Adjust the spacing between rows */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+/* change button colour to yellow on hover */
+button:hover {
+  background-color:aqua;
+}
+
+/* Add more header colors as needed */
+
+/* Add more styles as needed for other elements */

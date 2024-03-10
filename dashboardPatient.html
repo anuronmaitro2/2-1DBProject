@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyLnvMzCkLw2Sb6b0FZd1d4q5U0wABENFk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Patient ID input -->
+
+    <div id="patientInfo"></div>
+    <!-- ... (previous HTML code) ... -->
+    <!-- see doctors -->
+    <!-- take speciality as their input -->
+    <div id ="set Disesse">
+      <h2>Set Disesse To A new Disease If You want to make a appointment with a new Disease</h2>
+      <label for="disease">Disease:</label>
+      <input type="text" id="disease" placeholder="Enter Disease" />
+      <button onclick="setDisease()">Set</button>
+    </div>
+    <h2>Search For Doctors and make a appointment</h2>
+    <label for="speciality"> Doctor Speciality:</label>
+    <input type="text" id="speciality" placeholder="Enter Speciality" />
+    <!-- search button -->
+    <button onclick="search()">Search</button>
+    <div id="doctorsTable"></div>
+    <div id="previousInfoTable"></div>
+    <div id="seeWithWhichDoctorIHaveMostAppointment">
+      <h2>See With Which Doctor I Have Most Appointment</h2>
+      <button onclick="searchWithWhichDoctorIHaveMostAppointment()">
+        Search
+      </button>
+      <div id="withWhichDoctorIHaveMostAppointmentTable"></div>
+    </div>
+
+    <!-- see your pending lab test on given appointment -->
+    <div id="labTest">
+      <h2>See Pending Lab Test on a appointment</h2>
+      <label for="appointmentID">Appointment ID:</label>
+      <input
+        type="text"
+        id="appointmentID"
+        placeholder="Enter Appointment ID"
+      />
+      <button onclick="searchLabTest()">Search</button>
+      <div id="labTestTable"></div>
+    </div>
+    <div id="Payment">
+      <h2>Give Payment For a Appointment</h2>
+      <button onclick="searchAppointmentForPayment();">
+        See Payment Details and Pay
+      </button>
+    </div>
+    <div id="seePrescription">
+      <h2>See Your Prescription</h2>
+      <button onclick="showPrescription()">Show Prescription</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"
+    integrity="sha384-N8IQIvxrja8AuN4bNfqVAPBwlMtkzQ8i/dLMyW7xqEj9s5qCkBoaVv6VODd4cPeJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyLnvMzCkLw2Sb6b0FZd1d4q5U0wABENFk" crossorigin="anonymous"></script>
+    <script src="dashboardPatient.js"></script>
+  </body>
+</html>

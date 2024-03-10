@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Earnings Bar Chart</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyLnvMzCkLw2Sb6b0FZd1d4q5U0wABENFk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Doctor Earnings Bar Chart</h1>
+    <div style="max-width: 600px; margin: 0 auto;">
+    <canvas id="earningChart" width="400" height="200"></canvas>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"
+    integrity="sha384-N8IQIvxrja8AuN4bNfqVAPBwlMtkzQ8i/dLMyW7xqEj9s5qCkBoaVv6VODd4cPeJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyLnvMzCkLw2Sb6b0FZd1d4q5U0wABENFk" crossorigin="anonymous"></script>
+    <script>
+        // Function to fetch data from your API
+        const fetchData = async () => {
+            try {
+                const response = await fetch('http://localhost:3000/viewAllDoctorsIncome');
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log(data);
+                    return data;
+                } else {
+                    console.error('Failed to fetch data');
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        // Function to render the bar chart
+        const renderChart = async () => {
+            const data = await fetchData();
+
+            if (data) {
+                const doctorNames = data.map(entry => entry.DOCTORNAME);
+                const earnings = data.map(entry => entry.EARNING);
+
+                const ctx = document.getElementById('earningChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: doctorNames,
+                        datasets: [{
+                            label: 'Doctor Earnings',
+                            data: earnings,
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            }
+        };
+
+        // Call the renderChart function when the page loads
+        window.onload = renderChart;
+    </script>
+</body>
+</html>

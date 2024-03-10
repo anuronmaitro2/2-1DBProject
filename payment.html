@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div id="Payment">
+        <h2>See All your Unpaid Amount on this hospital</h2>
+        <button onclick="seeAllUnpaidAmount()">See Unpaid Amount</button>
+        <div id="unpaidAmountTable"></div>
+        <h2>Give Payment For a Appointment </h2>
+        <!-- label for appointment id  -->
+        <label for="appointmentID">Appointment ID:</label>
+        <!-- take appointment id as input -->
+        <input type="text" id="appointmentID" placeholder="Enter Appointment ID" />
+        <button onclick="searchLabTestForPayment();searchDoctorPayment();seeTotalPayment()">See Payment Details and Pay</button>
+        <div id="labTestPaymentTable"></div>
+        <div id="doctorPaymentTable"></div>
+        <div id="totalPaymentTable"></div>
+    </div>
+    <script src="payment.js"></script>
+</body>
+</html>

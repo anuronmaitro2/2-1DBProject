@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Medicine</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyLnvMzCkLw2Sb6b0FZd1d4q5U0wABENFk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+    <h2>Add Medicine</h2>
+    <div id="addMedicine">
+      <form id="addNewMedicineForm">
+        <label for="medicineName">Medicine Name</label>
+        <input type="text" name="medicineName" id="medicineName" />
+        <label for="genericName">Generic Name</label>
+        <input type="text" name="genericName" id="genericName" />
+        <label for="dosage">Dosage</label>
+        <input type="text" name="dosage" id="dosage" />
+        <label for="manufacturer">Manufacturer</label>
+        <input type="text" name="manufacturer" id="manufacturer" />
+        <label for="sideEffects">Side Effects</label>
+        <input type="text" name="sideEffects" id="sideEffects" />
+        <button type="button" onclick="addNewMedicine()">
+          Add New Medicine
+        </button>
+      </form>
+      <div id="addMedicineMessage"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"
+    integrity="sha384-N8IQIvxrja8AuN4bNfqVAPBwlMtkzQ8i/dLMyW7xqEj9s5qCkBoaVv6VODd4cPeJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyLnvMzCkLw2Sb6b0FZd1d4q5U0wABENFk" crossorigin="anonymous"></script>
+    <script>
+        //send add a medicine request
+const addNewMedicine=async()=>{
+   //get data from the form
+    const medicineName=document.getElementById('medicineName').value;
+    const genericName=document.getElementById('genericName').value;
+    const dosage=document.getElementById('dosage').value;
+    const manufacturer=document.getElementById('manufacturer').value;
+    const sideEffects=document.getElementById('sideEffects').value;
+    const medicineData = {
+      medicineName: medicineName,
+      genericName: genericName,
+      dosage: dosage,
+      manufacturer: manufacturer,
+      sideEffects: sideEffects,
+    };
+
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(medicineData),
+    };
+
+    try {
+      const url = 'http://localhost:3000/addMedicine';
+      const response = await fetch(url, options);
+      if (response.ok) {
+
+          const medicine = await response.json();
+          console.log(medicine);
+         //show in front end that medicine is added
+            //add a header and show that medicine is added
+            //create a header
+            const div = document.getElementById('addMedicineMessage');
+            div.innerHTML = '<h1>Medicine is added</h1>';
+            div.style.color = 'green';
+            div.style.textAlign = 'center';
+            //append the header to the body
+            //get the div by id
+            //const div=document.getElementById('addMedicine');
+            //div.appendChild(header);
+          // Display patient details on the prescription page
+         
+      } else {
+        console.error("Request failed with status:", response.status);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+
+    
+  }
+    </script>
+</body>
+</html>

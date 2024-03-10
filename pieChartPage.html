@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pie Chart Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyLnvMzCkLw2Sb6b0FZd1d4q5U0wABENFk" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div style="max-width: 600px; margin: 0 auto;">
+        <canvas id="medicineUsageChart" width="400" height="400"></canvas>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"
+    integrity="sha384-N8IQIvxrja8AuN4bNfqVAPBwlMtkzQ8i/dLMyW7xqEj9s5qCkBoaVv6VODd4cPeJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyLnvMzCkLw2Sb6b0FZd1d4q5U0wABENFk" crossorigin="anonymous"></script>
+    <script>
+      // Your fetch and display function
+      const showMedicineUsageLastMonth = async () => {
+        const options = {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        };
+
+        try {
+          const url = "http://localhost:3000/showMedicineUsageLastMonth";
+          const response = await fetch(url, options);
+          //check if the response is ok
+          if (response.ok) {
+            const medicineUsage = await response.json();
+            //open in a new html page
+
+            displayMedicineUsage(medicineUsage);
+          }
+        } catch (error) {
+          console.error(error);
+        }
+      };
+
+      const displayMedicineUsage = (medicineUsage) => {
+        // Extract data for the chart
+        const labels = medicineUsage.map((entry) => entry.MEDICINENAME);
+        const data = medicineUsage.map((entry) => entry.USAGECOUNT);
+
+        // Get random colors for each portion
+        const colors = generateRandomColors(medicineUsage.length);
+
+        // Create pie chart
+        const ctx = document
+          .getElementById("medicineUsageChart")
+          .getContext("2d");
+        new Chart(ctx, {
+          type: "pie",
+          data: {
+            labels: labels,
+            datasets: [
+              {
+                data: data,
+                backgroundColor: colors,
+              },
+            ],
+          },
+          options: {
+            tooltips: {
+              callbacks: {
+                label: (tooltipItem, data) => {
+                  const dataset = data.datasets[tooltipItem.datasetIndex];
+                  const label = data.labels[tooltipItem.index];
+                  const value = dataset.data[tooltipItem.index];
+                  return `${label}: ${value}`;
+                },
+              },
+            },
+          },
+        });
+      };
+
+      // Helper function to generate random colors
+      const generateRandomColors = (numColors) => {
+        const colors = [];
+        for (let i = 0; i < numColors; i++) {
+          colors.push(getRandomColor());
+        }
+        return colors;
+      };
+
+      // Helper function to get a random color
+      const getRandomColor = () => {
+        const letters = "0123456789ABCDEF";
+        let color = "#";
+        for (let i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      };
+
+      // Call the function to fetch and display data
+      showMedicineUsageLastMonth();
+    </script>
+  </body>
+</html>

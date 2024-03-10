@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prescription History</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyLnvMzCkLw2Sb6b0FZd1d4q5U0wABENFk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+    <!-- see this patients previous disease -->
+    <div id="previousDiseases">
+        <h1>See This Patients Previous Diseases</h1>
+        <button onclick="seePreviousDiseases()">See Previous Diseases</button>
+        <div id="previousDiseasesTable"></div>
+    </div>
+    <!-- see if the patient have made appointment with me or not -->
+    <div id="hasTakenAppointment">
+        <h1>See If Patient Has Taken Appointment with Me before</h1>
+       <!-- // <button onclick="seeCountOfAppointment()">See Count of Appointment</button> -->
+        <div id="countOfAppointmentTable"></div>
+    </div>
+    <div id="hasTakenAppointmentWithThatDisease">
+        <h1>See If Patient Has Taken Appointment with Me for with this Disease</h1>
+       <!-- // <button onclick="seeCountOfAppointmentWithThatDisease()">See Count of Appointment</button> -->
+        <div id="countOfAppointmentWithThatDiseaseTable"></div>
+    </div>
+    <div id="seeMedicinesGivenOnThisDisease">
+        <h1>See Medicines Given By Me On This Disease</h1>
+        <button onclick="seeMedicinesGivenOnThisDisease()">See Medicines</button>
+        <div id="medicinesGivenOnThisDiseaseTable"></div>
+    </div>
+    <div id="seeLabTestsGivenOnThisDisease">
+        <h1>See Lab Tests Given By Me On This Disease</h1>
+        <button onclick="seeLabTestsGivenOnThisDisease()">See Lab Tests</button>
+        <div id="labTestsGivenOnThisDiseaseTable"></div>
+    </div>
+    <div id="seeGivenAdviceOnThisDisease">
+        <h1>See Given Advice By Me On This Disease</h1>
+        <button onclick="seeGivenAdviceOnThisDisease()">See Advice</button>
+        <div id="givenAdviceOnThisDiseaseTable"></div>
+    </div>
+    <!-- <div id="seeOtherDoctorsGivenMedicinesOnThisDisease">
+        <h1>See Other Doctors Given Medicines On This Disease</h1>
+        <button onclick="seeOtherDoctorsGivenMedicinesOnThisDisease()">See Medicines</button>
+        <div id="otherDoctorsGivenMedicinesOnThisDiseaseTable"></div>
+    </div> -->
+    <div id="seeGivenMedicinesOnLastAppointMent">
+        <h1>See Given Medicines By Me On Last Appointment For Any Disease</h1>
+        <button onclick="seeGivenMedicinesOnLastAppointMent()">See Medicines</button>
+        <div id="givenMedicinesOnLastAppointMentTable"></div>
+    </div>
+    <div id="seeGivenAdvicesOnLastAppointMent">
+        <h1>See Given Advices By Me On Last Appointment For Any Disease</h1>
+        <button onclick="seeGivenAdvicesOnLastAppointMent()">See Advices</button>
+        <div id="givenAdvicesOnLastAppointMentTable"></div>
+    </div>
+    <div id="seeGivenLabTestsOnLastAppointMent">
+        <h1>See Given Lab Tests By Me On Last Appointment For Any Disease</h1>
+        <button onclick="seeGivenLabTestsOnLastAppointMent()">See Lab Tests</button>
+        <div id="givenLabTestsOnLastAppointMentTable"></div>
+    </div>
+    <div id="seeOtherDoctorsGivenMedicinesOnThisDisease">
+        <h1>See Other Doctors Given Medicines On This Disease</h1>
+        <button onclick="seeOtherDoctorsGivenMedicinesOnThisDisease()">See Medicines</button>
+        <div id="otherDoctorsGivenMedicinesOnThisDiseaseTable"></div>
+    </div>
+    <div id="seeWhatMedicinePatientHasTakenBetweenTwoDates">
+        <h1>See What Medicine Patient Has Taken Between Two Dates</h1>
+        <label for="fromDate">From Date:</label>
+        <input type="date" id="fromDate" name="fromDate">
+        <label for="toDate">To Date:</label>
+        <input type="date" id="toDate" name="toDate">
+        <button onclick="seeWhatMedicinePatientHasTakenBetweenTwoDates()">See Medicines</button>
+        <div id="whatMedicinePatientHasTakenBetweenTwoDatesTable"></div>
+    </div>
+    <div id="seeIfAMedicineHasBeenGivenToThisPatient">
+        <h1>See If A Medicine Has Been Given To This Patient</h1>
+        <label for="medicineName">Medicine Name:</label>
+        <input type="text" id="medicineName" name="medicineName">
+        <button onclick="seeIfAMedicineHasBeenGivenToThisPatient()">See Medicines</button>
+        <div id="ifAMedicineHasBeenGivenToThisPatientTable"></div>
+    </div>
+    <div id="seeIfALabTestHasBeenGivenToThisPatient">
+        <h1>See If A Lab Test Has Been Given To This Patient</h1>
+        <label for="labTestName">Lab Test Name:</label>
+        <input type="text" id="labTestName" name="labTestName">
+        <button onclick="seeIfALabTestHasBeenGivenToThisPatient()">See Lab Tests</button>
+        <div id="ifALabTestHasBeenGivenToThisPatientTable"></div>
+    </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"
+    integrity="sha384-N8IQIvxrja8AuN4bNfqVAPBwlMtkzQ8i/dLMyW7xqEj9s5qCkBoaVv6VODd4cPeJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyLnvMzCkLw2Sb6b0FZd1d4q5U0wABENFk" crossorigin="anonymous"></script>
+    <script src="prescriptionHistory.js"></script>
+
+</body>
+</html>
