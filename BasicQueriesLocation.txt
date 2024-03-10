@@ -1,0 +1,56 @@
+All backend queries are in index.js
+Registering a patient = /registerAsAPatient
+Login As a Patient = /loginAsAPatient
+Search For Doctors= /searchDoctors
+
+set a new Disease = /setDisease
+
+see patients previous diseases = /seePreviousDiseases
+
+set a appointment = /setAppointment
+Approve An appointment= /approveAppointment/:appointmentId
+/* When appointment is approved,prescription will be inserted automatically*/
+
+view Avaiable Medicines= /viewMedicines
+
+inserting the medicine into the prescription=/insertMedicineIntoPrescription
+
+view Advices= /viewAdvices
+
+inserting advice into prescription= /insertAdviceIntoPrescription
+
+
+View LabTests= /viewLabTests
+
+insert labtest into prescription= /insertLabTestIntoPrescription
+
+
+add medicine = /addMedicine
+
+add Lab test= /addLabTest
+
+add a new advice = /insertNewAdvice
+
+inserting the doctor Fee into prescription = /insertDoctorFeeIntoPrescription
+
+
+see pending Lab tests= /seePendingLabTests
+
+conduct a lab test = /conductLabTest
+
+seeing the pending payments of labtests = /labTestForPayment
+
+seeing the pending doctor payment= /doctorPayment
+
+seeing the total Payment=  /totalPayment
+
+
+see from patient his all medicines =  /prescription/getAllGivenMedicine
+
+All advices = /prescription/getAllGivenAdvice
+
+all given tests= /prescription/getAllGivenTests
+
+all given result  =  /prescription/getAllGivenTestResults
+
+
